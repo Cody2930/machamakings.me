@@ -191,6 +191,7 @@ body:not(.scrolled) .hero-image {
 
 .featured-artwork .collection-card {
     max-width: 800px;
+    max-height: auto;
     margin: auto;
 }
 
