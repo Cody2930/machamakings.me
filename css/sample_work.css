@@ -62,7 +62,7 @@
   'border-radius' and 'box-shadow' add visual polish.
 */
 .main-artwork-image {
-  width: 100%;
+  width: auto;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
