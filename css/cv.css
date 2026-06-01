@@ -32,6 +32,14 @@
   color: var(--secondary-accent);
 }
 
+.cv-card {
+  background-color: var(--primary-accent);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 2px solid var(--secondary-accent);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
 /* --- CV Download Section --- */
 /*
   Styles the section containing the "Download CV" button.

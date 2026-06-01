@@ -179,7 +179,7 @@ body:not(.scrolled) .hero-image {
 
 /* --- Featured Artwork Section --- */
 .featured-artwork {
-  padding: 1rem 2rem;
+  padding: 4rem 2rem;
   text-align: center;
 }
 
@@ -190,7 +190,7 @@ body:not(.scrolled) .hero-image {
 }
 
 .featured-artwork .collection-card {
-    max-width: 400px;
+    max-width: 800px;
     margin: auto;
 }
 
@@ -218,7 +218,7 @@ body:not(.scrolled) .hero-image {
 .collection-thumbnail {
   width: 100%;
   height: 450px; /* A bit taller for the featured item */
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 
@@ -232,4 +232,10 @@ body:not(.scrolled) .hero-image {
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
   color: var(--text-color);
+}
+
+.collection-info .collection-description {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
 }
