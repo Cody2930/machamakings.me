@@ -50,26 +50,29 @@
 /*
   The container for the main artwork image.
   'flex: 3' makes this column larger.
+  'display: grid' centers both landscape and portrait images.
 */
 .artwork-image-container {
   flex: 3;
+  width: 100%;
   max-height: calc(100vh - 9rem);
   overflow: hidden;
+  display: grid;
+  place-items: center;
 }
 
 /*
   The main image itself.
-  'max-width: 100%' keeps the image within the page container.
-  'max-height: 100%' ensures the image fits inside the container.
-  'height: auto' preserves aspect ratio.
-  'border-radius' and 'box-shadow' add visual polish.
+  For landscape images, max-width keeps it from overflowing horizontally.
+  For portrait images, max-height keeps it from overflowing vertically.
+  'width: auto' and 'height: auto' preserve aspect ratio.
 */
 .main-artwork-image {
   display: block;
   max-width: 100%;
-  width: 100%;
-  height: auto;
   max-height: 100%;
+  width: auto;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
