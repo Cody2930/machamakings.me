@@ -40,6 +40,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function updateArtworkImageContainers() {
+    const artworkImages = document.querySelectorAll('.main-artwork-image');
+    artworkImages.forEach(img => {
+      const container = img.closest('.artwork-image-container');
+      if (!container) return;
+
+      const naturalWidth = img.naturalWidth || img.width;
+      const naturalHeight = img.naturalHeight || img.height;
+      if (!naturalWidth || !naturalHeight) return;
+
+      const aspectRatio = naturalWidth / naturalHeight;
+      const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
+      const availableHeight = Math.max(200, viewportHeight - 160);
+      const availableWidth = viewportWidth <= 768
+        ? Math.max(200, viewportWidth - 48)
+        : Math.max(300, viewportWidth * 0.55);
+
+      let computedWidth;
+      let computedHeight;
+
+      if (aspectRatio >= 1) {
+        computedWidth = Math.min(availableWidth, availableHeight * aspectRatio);
+        computedHeight = computedWidth / aspectRatio;
+      } else {
+        computedHeight = Math.min(availableHeight, availableWidth / aspectRatio);
+        computedWidth = computedHeight * aspectRatio;
+      }
+
+      container.style.maxWidth = `${Math.round(computedWidth)}px`;
+      container.style.maxHeight = `${Math.round(computedHeight)}px`;
+      container.style.aspectRatio = `${naturalWidth}/${naturalHeight}`;
+    });
+  }
+
+  window.addEventListener('resize', updateArtworkImageContainers);
+
+  const artworkImages = document.querySelectorAll('.main-artwork-image');
+  artworkImages.forEach(img => {
+    if (img.complete) {
+      updateArtworkImageContainers();
+    } else {
+      img.addEventListener('load', updateArtworkImageContainers);
+    }
+  });
+
     // --- Sitemap Page ---
     const saveContactButton = document.getElementById('save-contact');
     if (saveContactButton) {
