@@ -53,17 +53,23 @@
 */
 .artwork-image-container {
   flex: 3;
+  max-height: calc(100vh - 9rem);
+  overflow: hidden;
 }
 
 /*
   The main image itself.
-  'width: 100%' makes it responsive.
-  'height: auto' maintains the aspect ratio.
+  'max-width: 100%' keeps the image within the page container.
+  'max-height: 100%' ensures the image fits inside the container.
+  'height: auto' preserves aspect ratio.
   'border-radius' and 'box-shadow' add visual polish.
 */
 .main-artwork-image {
-  width: auto;
+  display: block;
+  max-width: 100%;
+  width: 100%;
   height: auto;
+  max-height: 100%;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
