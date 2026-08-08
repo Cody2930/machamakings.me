@@ -11,7 +11,7 @@
 }
 
 .thank-you-message {
-  background: rgba(255, 255, 255, 0.9);
+  background: #288063;
   border: 1px solid var(--secondary-accent);
   border-radius: 16px;
   padding: 3rem;
