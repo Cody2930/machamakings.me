@@ -27,14 +27,14 @@
 .thank-you-message p {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-  color: var(--text-color);
+  color: #41cfa0;
 }
 
 .thank-you-message .btn {
   display: inline-block;
   padding: 1rem 2rem;
   background-color: #14bb84;
-  color: #41cfa0;
+  color: #288063;
   border-radius: 8px;
   font-family: var(--heading-font);
   font-size: 1.1rem;
