@@ -20,7 +20,7 @@
 
 .thank-you-message h1 {
   font-size: 3rem;
-  color: var(--secondary-accent);
+  color: #41cfa0;
   margin-bottom: 1.5rem;
 }
 
@@ -33,7 +33,7 @@
 .thank-you-message .btn {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: var(--secondary-accent);
+  background-color: #14bb84;
   color: #41cfa0;
   border-radius: 8px;
   font-family: var(--heading-font);
