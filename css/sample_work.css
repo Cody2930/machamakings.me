@@ -41,7 +41,8 @@
   'gap' creates space between the two columns.
 */
 .artwork-layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: flex-start;
   gap: 3rem;
 }
@@ -53,9 +54,12 @@
   'display: grid' centers both landscape and portrait images.
 */
 .artwork-image-container {
-  flex: 3;
-  width: 100%;
-  max-height: calc(100vh - 9rem);
+  justify-self: stretch;
+  min-width: 0;
+  width: auto;
+  height: 70vh;
+  min-height: 360px;
+  max-height: 760px;
   overflow: hidden;
   display: grid;
   place-items: center;
@@ -83,7 +87,7 @@
   'flex: 2' makes this column smaller than the image column.
 */
 .artwork-details-container {
-  flex: 2;
+  min-width: 0;
   position: sticky; /* Makes the details stick in place on scroll */
   top: 2rem; /* The distance from the top it should stick */
 }
@@ -148,7 +152,14 @@
   */
 
   .artwork-layout {
-    flex-direction: column; /* Stack the image and details vertically */
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .artwork-image-container {
+    height: 60vh;
+    min-height: 280px;
+    max-height: 520px;
   }
 
   .artwork-details-container {
